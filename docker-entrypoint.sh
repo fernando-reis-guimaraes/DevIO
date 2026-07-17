@@ -10,7 +10,7 @@ done
 
 # MINIO_DEV_BUCKETS is a comma-separated list of buckets to create on startup. For example: "bucket1,bucket2,bucket3"
 # Loop through the list and create each bucket using mc mb command
-printf '%s' "${MINIO_DEV_BUCKETS:-}" |
+printf '%s\n' "${MINIO_DEV_BUCKETS:-}" |
 	tr ',' '\n' |
 	while IFS= read -r bucket; do
 		[ -n "${bucket}" ] || continue
