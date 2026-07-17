@@ -1,6 +1,12 @@
 services:
   minio:
-    image: cr.umapps.net/umapps/minio4dev:latest
+    image: cr.umapps.net/umapps/minio4dev:${IMAGE_TAG:-beta}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/amd64
+        - linux/arm64
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin}
