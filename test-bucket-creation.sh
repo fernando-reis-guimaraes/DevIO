@@ -3,8 +3,8 @@ set -euo pipefail
 
 script_directory="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-image_name="minio4dev-bucket-test:local"
-container_name="minio4dev-bucket-test-$$"
+image_name="devio-bucket-test:local"
+container_name="devio-bucket-test-$$"
 
 minio_root_user="testadmin"
 minio_root_password="testpassword123"

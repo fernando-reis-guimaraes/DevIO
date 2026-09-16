@@ -1,6 +1,6 @@
 services:
   minio:
-    image: cr.umapps.net/umapps/minio4dev:${IMAGE_TAG:-beta}
+    image: cr.umapps.net/umapps/devio:${IMAGE_TAG:-beta}
     build:
       context: .
       dockerfile: Dockerfile

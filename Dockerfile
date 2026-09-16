@@ -1,6 +1,6 @@
-FROM minio/mc:latest AS mc
+FROM quay.io/minio/mc:latest AS mc
 
-FROM minio/minio:latest
+FROM quay.io/minio/minio:latest
 
 COPY --from=mc /usr/bin/mc /usr/local/bin/mc
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
