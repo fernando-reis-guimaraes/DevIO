@@ -1,5 +1,5 @@
 services:
-  minio:
+  devio:
     image: cr.umapps.net/umapps/devio:${IMAGE_TAG:-beta}
     build:
       context: .

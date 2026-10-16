@@ -1,8 +1,8 @@
-# Devio
+# DevIO
 
 Development-oriented MinIO image for local and development environments.
 
-Devio is based on the official MinIO images published on Quay and adds a small startup layer that prepares buckets automatically.
+DevIO is based on the official MinIO images published on Quay and adds a small startup layer that prepares buckets automatically.
 
 ## Image
 
@@ -21,15 +21,15 @@ cr.umapps.net/umapps/devio
   - enables anonymous downloads;
   - enables versioning.
 
-> Devio intentionally enables anonymous downloads for configured buckets. It is intended for development environments, not as a production security baseline.
+> DevIO intentionally enables anonymous downloads for configured buckets. It is intended for development environments, not as a production security baseline.
 
 ## Environment variables
 
-| Variable | Purpose |
-| --- | --- |
-| `MINIO_ROOT_USER` | MinIO root user. |
-| `MINIO_ROOT_PASSWORD` | MinIO root password. |
-| `MINIO_DEV_BUCKETS` | Comma-separated list of buckets to initialize. |
+| Variable              | Purpose                                        |
+| --------------------- | ---------------------------------------------- |
+| `MINIO_ROOT_USER`     | MinIO root user.                               |
+| `MINIO_ROOT_PASSWORD` | MinIO root password.                           |
+| `MINIO_DEV_BUCKETS`   | Comma-separated list of buckets to initialize. |
 
 When using the included `compose.yaml`, the defaults are:
 
