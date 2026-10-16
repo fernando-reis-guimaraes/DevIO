@@ -64,3 +64,18 @@ The Compose configuration builds both `linux/amd64` and `linux/arm64` and tags t
 ```text
 cr.umapps.net/umapps/devio:${IMAGE_TAG:-beta}
 ```
+
+## Licensing and third-party attribution
+
+DevIO's wrapper files (Dockerfile, Compose configuration, and entrypoint script) are provided under the [GNU Affero General Public License version 3](LICENSE) (AGPL-3.0-only). DevIO's image redistributes the **unmodified** MinIO Server binary from `quay.io/minio/minio` and the MinIO Client (`mc`) binary from `quay.io/minio/mc`; both upstream projects are also licensed under AGPLv3. Their original copyright notices are preserved separately:
+
+- [MinIO Server NOTICE](licenses/MINIO-SERVER-NOTICE) — [upstream source](https://github.com/minio/minio) and [upstream license](https://github.com/minio/minio/blob/master/LICENSE).
+- [MinIO Client NOTICE](licenses/MINIO-CLIENT-NOTICE) — [upstream source](https://github.com/minio/mc) and [upstream license](https://github.com/minio/mc/blob/master/LICENSE).
+
+The Dockerfile installs the license text and both copyright notices under `/usr/share/licenses/devio/` in the final image. The source of DevIO's own wrapper and build scripts is in this Git repository.
+
+### Corresponding source for distributed images
+
+The `Dockerfile` currently references `:latest` upstream image tags. These tags are mutable, so **the upstream source associated with a particular built image must be identified from the exact binaries/images used for that build**. Record the resolved upstream image digests and the output of `minio --version` and `mc --version` in your release records, and provide the corresponding versioned upstream source when distributing images; links to upstream default branches alone do not establish exact source correspondence.
+
+For reproducible releases, replace `:latest` with immutable upstream image digests and record those digests alongside the release. The license/notice additions in this repository do not by themselves satisfy every obligation associated with distributing a built image; review the actual image and its dependencies before publishing.
